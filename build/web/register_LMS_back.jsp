@@ -27,7 +27,7 @@
             if(f==1)
             {
                 out.print("registered !");
-                response.sendRedirect("http://localhost:8080/Peer_assessment/login_page.jsp");
+                response.sendRedirect("LMS_login.jsp");
             }
             else
                 out.print("unsuccessfull  :(!"+f);

@@ -8,6 +8,7 @@
 <%@page import="helper_pack.*" %>
 <% Class.forName("com.mysql.jdbc.Driver"); %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -96,16 +97,14 @@ return f;
         </div>
         <br>
         <input class="form-control buttonstyle" type="submit" value="Login" name="login" />
+                
         </form>
-       
    </div>
-  
             <br>
             <br>
             <br>
-            <p align="center">New to the platform ? <a href="register_2.jsp">Sign Up</a>!</p>
+            <p>New to portal ? <a href="register_LMS">Sign Up</a>!</p>
             <br>
-             
            <%
                String userString=request.getParameter("username");
                String passwordString=request.getParameter("password");
@@ -115,7 +114,7 @@ return f;
                if(t==1)
                {
                    out.print("Succeccful login!");
-                   String redirectURL = "lms1.jsp";
+                   String redirectURL = "lm1_back.jsp";
                    session.setAttribute("username", userString);
                   // session.setAttribute("id", value);
                   DataBase_Handler dbh=new DataBase_Handler();
@@ -148,7 +147,7 @@ return f;
                }
                
                else
-               //out.print("Login unsuccessful!"+t+ar.get_password(userString));
+                System.out.print("Login unsuccessful!"+t+ar.get_password(userString));
                %>
         </div>
          </div>   

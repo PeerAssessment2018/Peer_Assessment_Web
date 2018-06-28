@@ -103,6 +103,7 @@ return f;
             <br>
             <br>
             <br>
+            <p>New to portal ? <a href="register_LMS">Sign Up</a>!</p>
             <br>
            <%
                String userString=request.getParameter("username");
@@ -113,7 +114,7 @@ return f;
                if(t==1)
                {
                    out.print("Succeccful login!");
-                   String redirectURL = "http://localhost:8080/Peer_assessment/lm1_back.jsp";
+                   String redirectURL = "lm1_back.jsp";
                    session.setAttribute("username", userString);
                   // session.setAttribute("id", value);
                   DataBase_Handler dbh=new DataBase_Handler();
@@ -134,7 +135,7 @@ return f;
                   else if(n==1)
                   {
                       redirectURL="";
-                      redirectURL="http://localhost:8080/Peer_assessment/lms2.jsp";
+                      redirectURL="lms2.jsp";
                       System.out.println(redirectURL);
                   }
                   else
@@ -146,7 +147,7 @@ return f;
                }
                
                else
-               out.print("Login unsuccessful!"+t+ar.get_password(userString));
+                System.out.print("Login unsuccessful!"+t+ar.get_password(userString));
                %>
         </div>
          </div>   

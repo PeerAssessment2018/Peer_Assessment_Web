@@ -11,6 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lms1</title>
+        <link rel="stylesheet" href="boot.css">
+        <link rel="stylesheet" href="newcss.css">
         <SCRIPT LANGUAGE="JavaScript">
         function button1()
         {
@@ -20,7 +22,7 @@
         } 
     </SCRIPT>
     </head>
-    <body>
+    <body style="background-color: #a5adba">
         <%!
             class Connector_class
             {
@@ -74,7 +76,13 @@ int numberof_courses;
             }
             
             %>
-            <form name="lms1_form" method="POST">
+            <div class="back_image">
+                <div class="box" align="center">
+                    <div class="headder" align="center">
+                        <h2 class="headder_color">Submit Your Response</h2>
+                    </div>
+                    <div align="center"  >
+                        <form name="lms1_form" method="POST">
                 
             
         <table border="1" cellspacing="2" cellpadding="2" align="center">
@@ -138,6 +146,10 @@ int numberof_courses;
                 </tr>
             </tbody>
         </table>
-           </form>             
+           </form> 
+                    </div>
+            
+                </div>
+            </div>
     </body>
 </html>
