@@ -46,6 +46,8 @@ public final class lms2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+ Class.forName("com.mysql.jdbc.Driver"); 
+      out.write("\n");
       out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -74,31 +76,66 @@ public final class lms2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <div class=\"criterias\">\n");
       out.write("                                ");
 
-                                    String course_id="",question_id="";
+                                    
+                                    String course_id="Item 1",question_id="15";
                                     DataBase_Handler dbh=new DataBase_Handler();
                                     ArrayList ar=dbh.criteria(course_id, question_id);
                                     int n=ar.size(),i=0;
+                                    System.out.println(ar);
                                     while(i<n)
                                     {
+                                        String cri=(String)ar.get(i);
+                                        System.out.println("ele :"+cri);
                                 
       out.write("\n");
-      out.write("                                <h4 class=\"headder_color\" align=\"center\">");
+      out.write("                                <div class=\"criteria_box_header\">\n");
+      out.write("                                    <h5 class=\"headder_color\" align=\"center\">");
       out.print(ar.get(i).toString().toUpperCase() );
-      out.write("</h4>\n");
-      out.write("                           \n");
+      out.write("</h5>\n");
+      out.write("                                </div>\n");
+      out.write("                                <div style=\"background: #dbdde0\">\n");
+      out.write("                                    ");
+
+                                        ArrayList options=dbh.r_lms3_f1(0, course_id, question_id, cri);
+                                        int j=0,m=options.size();
+                                        while(j<m)
+                                        {
+                                    
+      out.write("\n");
+      out.write("                                    <input type=\"radio\" name=");
+      out.print(cri+"radio");
+      out.write(" value=\"radio1\" >");
+      out.print(options.get(j) );
+      out.write("<br>\n");
+      out.write("                                    ");
+j++;} 
+      out.write("\n");
+      out.write("                                </div>\n");
+      out.write("                                <div><br></div>\n");
       out.write("                                ");
   
+                                    
                                     i++;   }
                                 
                                 
       out.write("\n");
+      out.write("                                \n");
       out.write("                            </div>\n");
+      out.write("                                <br>\n");
+      out.write("                            <div style=\"padding: 5px\">\n");
+      out.write("                                </div>\n");
+      out.write("                            <input class=\"form-control buttonstyle_smaller\" type=\"\" value=\"Check\" name=\"login\" onclick=\"butt_click()\"/>\n");
       out.write("                            \n");
       out.write("                    </form>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("        \n");
+      out.write("                            <script lang=\"javascript\">\n");
+      out.write("                                function butt_click()\n");
+      out.write("                                {\n");
+      out.write("                                    alert(\"clicked\");\n");
+      out.write("                                }\n");
+      out.write("                                </script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

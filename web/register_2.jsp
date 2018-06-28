@@ -12,13 +12,15 @@
         <link rel="stylesheet" href="boot.css">
         <link rel="stylesheet" href="newcss.css">
     </head>
-    <body style="background-color: #E9D074">
+    <body style="background-color: #a5adba">
+        <div class="back_image" >
+        <div class="box" align="center">
         <div class="headder" align="center">
             <h2 class="headder_color">Register</h2>
         </div>
         <div align="center" >
             
-            <form name="registration_form" action="register_back.jsp" method="POST">
+            <form autocomplete="off" name="registration_form" action="register_back.jsp" method="POST" align="center">
                 <br>
                 <h5 class="text_color">Fill up the following to Register :</h5>
                 <br>
@@ -32,6 +34,7 @@
                 <br>
                 <div class="input-width"><input class="form-control" type="text" placeholder="Email" name="email"  size="10" /></div>
                 <br>
+                <div>
                 <input class="form-control buttonstyle" type="submit" value="Register" name="register" /></div>
                 <!--<table>
                     <thead>

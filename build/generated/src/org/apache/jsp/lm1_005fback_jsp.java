@@ -54,11 +54,12 @@ public final class lm1_005fback_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>LMS Handle</title>\n");
+      out.write("        <title>Submit Your Response</title>\n");
       out.write("        \n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <div align=\"center\">\n");
+      out.write("        <div class=\"box\" >\n");
+      out.write("           <div align=\"center\">\n");
       out.write("            <form name=\"lms1_form\" method=\"POST\" action=\"lm1_submit.jsp\">\n");
       out.write("        <table border=\"1\" cellspacing=\"2\" cellpadding=\"2\" align=\"center\">\n");
       out.write("            <thead>\n");
@@ -111,7 +112,8 @@ public final class lm1_005fback_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("            </tbody>\n");
       out.write("        </table>\n");
       out.write("                </form>\n");
-      out.write("            </div>\n");
+      out.write("            </div> \n");
+      out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

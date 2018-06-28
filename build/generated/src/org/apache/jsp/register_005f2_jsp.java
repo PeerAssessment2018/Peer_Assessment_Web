@@ -52,13 +52,15 @@ public final class register_005f2_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <link rel=\"stylesheet\" href=\"boot.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"newcss.css\">\n");
       out.write("    </head>\n");
-      out.write("    <body style=\"background-color: #E9D074\">\n");
+      out.write("    <body style=\"background-color: #a5adba\">\n");
+      out.write("        <div class=\"back_image\" >\n");
+      out.write("        <div class=\"box_login\" align=\"center\">\n");
       out.write("        <div class=\"headder\" align=\"center\">\n");
       out.write("            <h2 class=\"headder_color\">Register</h2>\n");
       out.write("        </div>\n");
       out.write("        <div align=\"center\" >\n");
       out.write("            \n");
-      out.write("            <form name=\"registration_form\" action=\"register_back.jsp\" method=\"POST\">\n");
+      out.write("            <form autocomplete=\"off\" name=\"registration_form\" action=\"register_back.jsp\" method=\"POST\" align=\"center\">\n");
       out.write("                <br>\n");
       out.write("                <h5 class=\"text_color\">Fill up the following to Register :</h5>\n");
       out.write("                <br>\n");
@@ -72,6 +74,7 @@ public final class register_005f2_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                <br>\n");
       out.write("                <div class=\"input-width\"><input class=\"form-control\" type=\"text\" placeholder=\"Email\" name=\"email\"  size=\"10\" /></div>\n");
       out.write("                <br>\n");
+      out.write("                <div>\n");
       out.write("                <input class=\"form-control buttonstyle\" type=\"submit\" value=\"Register\" name=\"register\" /></div>\n");
       out.write("                <!--<table>\n");
       out.write("                    <thead>\n");
