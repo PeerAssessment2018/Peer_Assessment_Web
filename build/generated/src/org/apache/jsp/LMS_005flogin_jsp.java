@@ -148,6 +148,7 @@ return f;
       out.write("            <br>\n");
       out.write("            <br>\n");
       out.write("            <br>\n");
+      out.write("            <p>New to portal ? <a href=\"register_LMS.jsp\">Sign Up</a>!</p>\n");
       out.write("            <br>\n");
       out.write("           ");
 
@@ -192,7 +193,7 @@ return f;
                }
                
                else
-               out.print("Login unsuccessful!"+t+ar.get_password(userString));
+                System.out.print("Login unsuccessful!"+t+ar.get_password(userString));
                
       out.write("\n");
       out.write("        </div>\n");

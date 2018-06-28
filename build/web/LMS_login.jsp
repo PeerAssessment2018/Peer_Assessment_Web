@@ -86,7 +86,7 @@ return f;
    <div align="center">
    
    
-        <form autocomplete="off" name="login" action="login_page.jsp" method="POST" align="center" >
+        <form autocomplete="off" name="login" action="LMS_login.jsp" method="POST" align="center" >
         <br>
         <div class="input-width">
             <input autocomplete="off" class="form-control" type="text" placeholder="User Name" name="username" size="10" />
@@ -103,7 +103,7 @@ return f;
             <br>
             <br>
             <br>
-            <p>New to portal ? <a href="register_LMS">Sign Up</a>!</p>
+            <p>New to portal ? <a href="register_LMS.jsp">Sign Up</a>!</p>
             <br>
            <%
                String userString=request.getParameter("username");

@@ -3,6 +3,15 @@
     width: 70%;
     
 }
+
+.prompt_box,.box
+{
+    background-color: white;
+    overflow: auto;
+    text-align: left;
+    height: 190px;
+}
+
 .buttonstyle
 {
    width: 70%;

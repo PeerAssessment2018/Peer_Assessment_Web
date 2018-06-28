@@ -4,46 +4,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.*;
+import helper_pack.*;
 
 public final class lms1_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
-
-            class Connector_class
-            {
-                String URL="jdbc:mysql://localhost:3306/peer_assessment";
-                String user="root",password="";
-Connection connection;
-PreparedStatement ps;
-ResultSet rs=null;
-int numberof_courses;
-                public Connector_class()
-                {
-                    try {
-                            connection=DriverManager.getConnection(URL,user,password);
-                        System.out.println("Connection Established !");
-                         ps=connection.prepareStatement("SELECT DISTINCT course_id from student_courseenrollment");
-                         rs=ps.executeQuery();
-                         numberof_courses=0;
-                         while(rs.next())
-                                numberof_courses++;
-                    } 
-                         catch (Exception e) 
-                        {
-                            e.printStackTrace();
-                        }
-                }
-                public ResultSet get_courses()
-                {
-                    ResultSet resultSet=null;
-                    try {
-                            resultSet=ps.executeQuery();
-                        } catch (Exception e) {
-                        }
-                    return resultSet;
-                }
-            }
-            
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
@@ -78,64 +43,62 @@ int numberof_courses;
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
-      out.write('\n');
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
  Class.forName("com.mysql.jdbc.Driver"); 
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Lms1</title>\n");
+      out.write("        <title>Submit Your Response</title>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"boot.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"newcss.css\">\n");
       out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        ");
-      out.write("\n");
-      out.write("        <table border=\"0\" cellspacing=\"2\" cellpadding=\"2\">\n");
-      out.write("            <thead>\n");
-      out.write("                <tr>\n");
-      out.write("                    <th>Submit your Response</th>\n");
-      out.write("                </tr>\n");
-      out.write("            </thead>\n");
-      out.write("            <tbody>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Select Course:</td>\n");
-      out.write("                    <td>\n");
-      out.write("                        <select name=\"dropdown\">\n");
-      out.write("                            ");
+      out.write("    <body style=\"background-color: #a5adba\">\n");
+      out.write("        <div class=\"back_image\">\n");
+      out.write("            <div class=\"box\" align=\"center\">\n");
+      out.write("                <div class=\"headder\" align=\"center\">\n");
+      out.write("                    <h2 class=\"headder_color\">Submit Your Response</h2>\n");
+      out.write("                </div>\n");
+      out.write("                <div align=\"center\"  >\n");
+      out.write("                     <form name=\"lms1_form\" method=\"POST\" action=\"lm1_submit.jsp\"> \n");
+      out.write("                         ");
 
-                                Connector_class cc=new Connector_class();
-                                ResultSet rs=cc.get_courses();
-                                while(rs.next())
-                                {
-                                
+                             String s1 = (String)session.getAttribute("username"); 
+                             session.setAttribute("username", s1);
+                             DataBase_Handler dbh=new DataBase_Handler();
+                         
       out.write("\n");
-      out.write("                                <option>");
-      out.print(rs.getString("course_id") );
-      out.write("</option>\n");
-      out.write("                            ");
-} 
-      out.write("\n");
-      out.write("                        </select></td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Prompt :</td>\n");
-      out.write("                    <td><textarea name=\"prompt\" rows=\"4\" cols=\"20\">\n");
-      out.write("                        </textarea></td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Your Response :</td>\n");
-      out.write("                    <td><textarea name=\"response\" rows=\"4\" cols=\"20\">\n");
-      out.write("                        </textarea></td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td><input type=\"submit\" value=\"Submit\" name=\"submit\" /></td>\n");
-      out.write("                    <td><input type=\"standard\" value=\"Save\" name=\"save\" /></td>\n");
-      out.write("                </tr>\n");
-      out.write("            </tbody>\n");
-      out.write("        </table>\n");
-      out.write("\n");
+      out.write("                         <br>\n");
+      out.write("                             <div class=\"input-width\">\n");
+      out.write("                                 <textarea style=\"overflow: auto\" autocomplete=\"off\" placeholder=");
+      out.print(dbh.course_question("Item 1") );
+      out.write(" class=\"form-control\" name=\"prompt\" rows=\"4\" cols=\"20\" readonly=\"readonly\"></textarea>\n");
+      out.write("                             </div>\n");
+      out.write("                         <br>\n");
+      out.write("                             <div class=\"input-width\">\n");
+      out.write("                                 <textarea style=\"overflow: auto\" autocomplete=\"off\" placeholder=\"Response\" class=\"form-control\" name=\"response\" rows=\"4\" cols=\"20\"></textarea>\n");
+      out.write("                             </div>  \n");
+      out.write("                        </select>\n");
+      out.write("                        <br>\n");
+      out.write("                            <div style=\"padding: 5px\">\n");
+      out.write("                                </div>\n");
+      out.write("                            <input class=\"form-control buttonstyle_smaller\" type=\"\" value=\"Save\" name=\"login\" onclick=\"butt_click()\"/>\n");
+      out.write("                            <br>\n");
+      out.write("                            <input class=\"form-control buttonstyle_smaller\" type=\"\" value=\"Submit\" name=\"login\" onclick=\"butt_click()\"/>\n");
+      out.write("                            \n");
+      out.write("                            \n");
+      out.write("                </form>\n");
+      out.write("                </div>\n");
+      out.write("               \n");
+      out.write("            </div> \n");
+      out.write("        </div>\n");
+      out.write("        </div>\n");
+      out.write("        \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

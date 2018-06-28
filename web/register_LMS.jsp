@@ -20,7 +20,7 @@
         </div>
         <div align="center" >
             
-            <form autocomplete="off" name="registration_form" action="register_back.jsp" method="POST" align="center">
+            <form autocomplete="off" name="registration_form" action="register_LMS_back.jsp" method="POST" align="center">
                 <br>
                 <h5 class="text_color">Fill up the following to Register :</h5>
                 <br>
@@ -36,37 +36,6 @@
                 <br>
                 <div>
                 <input class="form-control buttonstyle" type="submit" value="Register" name="register" /></div>
-                <!--<table>
-                    <thead>
-                    <th colspan="2" align="center">Fill up the following to Register :</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-        		<td>UserName :</td>
-        		<td><input class="form-control" type="text" name="username" value="" size="20" /></td>
-        	</tr>
-                <tr>
-        		<td>First Name :</td>
-        		<td><input type="text" name="first" value="" size="20" /></td>
-        	</tr>
-                <tr>
-        		<td>Last Name :</td>
-        		<td><input type="text" name="last" value="" size="20" /></td>
-        	</tr>
-        	<tr>
-        		<td>Password :</td>
-        		<td><input type="password" name="password" value="" size="20" /></td>
-        	</tr>
-                <tr>
-        		<td>Email :</td>
-        		<td><input type="text" name="email" value="" size="20" /></td>
-        	</tr>
-        	<tr>
-        		<td></td>
-        		<td><input type="submit" value="Submit" name="submit_button"  /><input align="right" type="reset" value="Reset" name="reset_button" /></td>
-        	</tr>
-                    </tbody>
-                </table> -->
             </form>
         </div>
     </body>
