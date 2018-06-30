@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lms2</title>
+        <title>Learn to Assess</title>
         <link rel="stylesheet" href="boot.css">
         <link rel="stylesheet" href="newcss.css">
     </head>
@@ -24,8 +24,9 @@
                 <div align="center"  >
                     <form name="lms2_form" method="POST">
                             <br>
-                             <div class="input-width">
-                                 <textarea autocomplete="off" placeholder="Prompt" class="form-control" name="prompt" rows="4" cols="20" readonly="readonly"></textarea>
+                            <% DataBase_Handler dbh=new DataBase_Handler(); %>
+                             <div class="input-width form-control prompt_box">
+                                 <p><%= dbh.course_question("Item 1") %></p>
                              </div>
                             <br>
                              <div class="input-width">
@@ -36,7 +37,6 @@
                                 <%
                                     
                                     String course_id="Item 1",question_id="15";
-                                    DataBase_Handler dbh=new DataBase_Handler();
                                     ArrayList ar=dbh.criteria(course_id, question_id);
                                     int n=ar.size(),i=0;
                                     System.out.println(ar);

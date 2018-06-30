@@ -116,7 +116,6 @@ return f;
                    out.print("Succeccful login!");
                    String redirectURL = "lm1_back.jsp";
                    session.setAttribute("username", userString);
-                  // session.setAttribute("id", value);
                   DataBase_Handler dbh=new DataBase_Handler();
                   int user_id=dbh.username_to_id(userString);
                   System.out.println("id"+user_id);

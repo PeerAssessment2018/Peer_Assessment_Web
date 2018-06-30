@@ -3,7 +3,14 @@
     width: 70%;
     
 }
-
+.grade_post{
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px; 
+    background: linear-gradient(to right, #ff8c00 , #8541BB);
+    align-content: center;
+    color: #C5D0D6;
+}
 .prompt_box,.box
 {
     background-color: white;
@@ -114,12 +121,13 @@
     width: 250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
+    align-content: center;
     width: 50%;
-    height: 90%;
+    height: 98.5%;
     margin: auto;
-   margin-top: 2%;
+   margin-top: 0.5%;
    background-color: #dbdde0;
-   padding-bottom: 30px;
+   padding-bottom: 5px;
 }
 
 .box-2{

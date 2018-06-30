@@ -8,7 +8,6 @@
 <% Class.forName("com.mysql.jdbc.Driver"); %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,6 +26,7 @@
                          <%
                              String s1 = (String)session.getAttribute("username"); 
                              session.setAttribute("username", s1);
+                             //session.setAttribute("id", session.getAttribute("id"));
                              DataBase_Handler dbh=new DataBase_Handler();
                              String s=dbh.course_question("Item 1");
                              System.out.println(s);

@@ -11,32 +11,39 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Learn to Assess</title>
+        <title>Peer Assessment</title>
         <link rel="stylesheet" href="boot.css">
         <link rel="stylesheet" href="newcss.css">
+        <script lang="javascript" src="support.js">
+        </script>
     </head>
     <body style="background-color: #a5adba">
         <div class="back_image">
             <div class="box" align="center">
                 <div class="headder" align="center">
-                    <h2 class="headder_color">Learn to Assess</h2>
+                    <%
+                        DataBase_Handler dbh=new DataBase_Handler();
+                        //int user_id=Integer.valueOf((String)session.getAttribute("id"));
+                        int number_peer=5;//dbh.assessments_done(user_id,"Item 1","15")+1;
+                        %>
+                        <h2 class="headder_color">Assess Your Peer : <%= number_peer %></h2>
                 </div>
                 <div align="center"  >
-                    <form name="lms2_form" method="POST">
-                            <br>
-                            <% DataBase_Handler dbh=new DataBase_Handler(); %>
+                    <form name="lms3_form" method="POST">
+                        <br>
                              <div class="input-width form-control prompt_box">
                                  <p><%= dbh.course_question("Item 1") %></p>
                              </div>
                             <br>
-                             <div class="input-width">
-                                 <textarea autocomplete="off" placeholder="Response" class="form-control" name="prompt" rows="4" cols="20" readonly="readonly"></textarea>
+                            <div class="input-width">
+                                 <textarea autocomplete="off" placeholder="Response" class="form-control" name="prompt" rows="4" cols="20" ></textarea>
                              </div>
                             <br>
                             <div class="criterias">
                                 <%
                                     
                                     String course_id="Item 1",question_id="15";
+                                    
                                     ArrayList ar=dbh.criteria(course_id, question_id);
                                     int n=ar.size(),i=0;
                                     System.out.println(ar);
@@ -69,17 +76,11 @@
                                 <br>
                             <div style="padding: 5px">
                                 </div>
-                            <input class="form-control buttonstyle_smaller" type="" value="Check" name="login" onclick="butt_click()"/>
+                            <input class="form-control buttonstyle_smaller" type="submit" value="Submit" name="submit" onclick="butt_click()"/>
                             
                     </form>
                 </div>
             </div>
         </div>
-                            <script lang="javascript">
-                                function butt_click()
-                                {
-                                    alert("clicked");
-                                }
-                                </script>
     </body>
 </html>

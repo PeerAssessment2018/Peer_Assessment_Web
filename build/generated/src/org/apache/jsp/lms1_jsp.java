@@ -50,7 +50,6 @@ public final class lms1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
@@ -70,18 +69,21 @@ public final class lms1_jsp extends org.apache.jasper.runtime.HttpJspBase
 
                              String s1 = (String)session.getAttribute("username"); 
                              session.setAttribute("username", s1);
+                             //session.setAttribute("id", session.getAttribute("id"));
                              DataBase_Handler dbh=new DataBase_Handler();
+                             String s=dbh.course_question("Item 1");
+                             System.out.println(s);
                          
       out.write("\n");
       out.write("                         <br>\n");
-      out.write("                             <div class=\"input-width\">\n");
-      out.write("                                 <textarea style=\"overflow: auto\" autocomplete=\"off\" placeholder=");
-      out.print(dbh.course_question("Item 1") );
-      out.write(" class=\"form-control\" name=\"prompt\" rows=\"4\" cols=\"20\" readonly=\"readonly\"></textarea>\n");
+      out.write("                             <div class=\"input-width form-control prompt_box\">\n");
+      out.write("                                 <p>");
+      out.print( dbh.course_question("Item 1") );
+      out.write("</p>\n");
       out.write("                             </div>\n");
       out.write("                         <br>\n");
       out.write("                             <div class=\"input-width\">\n");
-      out.write("                                 <textarea style=\"overflow: auto\" autocomplete=\"off\" placeholder=\"Response\" class=\"form-control\" name=\"response\" rows=\"4\" cols=\"20\"></textarea>\n");
+      out.write("                                 <textarea class=\"form-control\" autocomplete=\"off\" placeholder=\"Response\" class=\"form-control\" name=\"response\" rows=\"4\" cols=\"20\"></textarea>\n");
       out.write("                             </div>  \n");
       out.write("                        </select>\n");
       out.write("                        <br>\n");
