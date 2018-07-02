@@ -62,7 +62,7 @@ public final class CMS_005f1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"back_image\">\n");
       out.write("            <div class=\"box\" align=\"center\">\n");
       out.write("                <div class=\"headder\" align=\"center\">\n");
-      out.write("                    <h2 class=\"headder_color\">Self-Assessment</h2>\n");
+      out.write("                    <h2 class=\"headder_color\">Assessment Initialization</h2>\n");
       out.write("                </div>\n");
       out.write("                <div align=\"center\"  >\n");
       out.write("                    <form name=\"cms1_form\" method=\"POST\">\n");

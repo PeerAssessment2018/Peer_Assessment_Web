@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Initialize Ruberics </title>
+        <title>Set Rubrics</title>
         <link rel="stylesheet" href="boot.css">
         <link rel="stylesheet" href="newcss.css">
         <script lang="javascript" src="support.js" ></script>
@@ -19,7 +19,7 @@
        <div class="back_image">
             <div class="box" align="center">
                 <div class="headder" align="center">
-                    <h2 class="headder_color">Self-Assessment</h2>
+                    <h2 class="headder_color">Set Rubrics</h2>
                 </div>
                 <div align="center"  >
                     <form name="cms2_form" method="POST">

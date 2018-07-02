@@ -20,7 +20,7 @@
         <div class="back_image">
             <div class="box" align="center">
                 <div class="headder" align="center">
-                    <h2 class="headder_color">Self-Assessment</h2>
+                    <h2 class="headder_color">Set Prompt Details </h2>
                 </div>
                 <div align="center"  >
                     <form name="cms1_form" method="POST">
