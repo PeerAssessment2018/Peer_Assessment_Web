@@ -14,6 +14,25 @@
         <title>Submit Your Response</title>
         <link rel="stylesheet" href="boot.css">
         <link rel="stylesheet" href="newcss.css">
+        <script src="support.js"></script>
+        <script language="javascript">
+            function test_session()
+            {   
+                        alert("hello! 11");
+                        <% session.setAttribute("state_s", "1");
+                            //System.out.println(request.getAttribute("response"));%>
+                                window.location="lms1_save_1.jsp";
+            }
+            /*function save_data()
+            {
+            }*/
+           function test_session2()
+            {   
+                        alert("hello! 22");
+                        <% session.setAttribute("state_s", "2"); %>
+                                window.location="lms1_save_2.jsp";
+            }
+        </script>
     </head>
     <body style="background-color: #a5adba">
         <div class="back_image">
@@ -22,7 +41,7 @@
                     <h2 class="headder_color">Submit Your Response</h2>
                 </div>
                 <div align="center"  >
-                     <form name="lms1_form" method="POST" action="lm1_submit.jsp"> 
+                     <form name="lms1_form" method="POST" action=""> 
                          <%
                              String s1 = (String)session.getAttribute("username"); 
                              session.setAttribute("username", s1);
@@ -37,22 +56,21 @@
                              </div>
                          <br>
                              <div class="input-width">
-                                 <textarea class="form-control" autocomplete="off" placeholder="Response" class="form-control" name="response" rows="4" cols="20"></textarea>
+                                <textarea placeholder="Response" class="form-control" name="response" value="response" rows="4" cols="20"></textarea>
+                                
+                                <!-- <input type="text" name="response" placeholder="response" > -->
+                             
                              </div>  
-                        </select>
                         <br>
                             <div style="padding: 5px">
                                 </div>
-                            <input class="form-control buttonstyle_smaller" type="" value="Save" name="login" onclick="butt_click()"/>
+                        <button class="form-control buttonstyle_smaller" type="button" value="Save" name="submit" onclick="test_session()">Save</button>
                             <br>
-                            <input class="form-control buttonstyle_smaller" type="" value="Submit" name="login" onclick="butt_click()"/>
-                            
-                            
+                            <button class="form-control buttonstyle_smaller" type="button" value="Submit" name="submit2" onclick="test_session2()">Submit</button>
                 </form>
                 </div>
                
             </div> 
-        </div>
         </div>
         
     </body>

@@ -233,7 +233,7 @@ public class DataBase_Handler
         int f=0;
         try 
         {
-            String sql = "INSERT INTO courseware_studentmodule (user_id,course_id,question_id,prompt) VALUES ("+user_id+","+"'"+course_id+"'"+ ","+"'"+question_id+"'"+","+"'"+prompt+"'"+ ");";
+            String sql = "INSERT INTO courseware_studentmodule (user_id,course_id,question_id,state) VALUES ("+user_id+","+"'"+course_id+"'"+ ","+"'"+question_id+"'"+","+"'"+prompt+"'"+ ");";
             Statement stmt = conn.createStatement();
             f=(stmt.execute(sql)==true)?1:0;
         } 

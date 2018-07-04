@@ -52,7 +52,7 @@ public final class CMS_005f2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Initialize Ruberics </title>\n");
+      out.write("        <title>Set Rubrics</title>\n");
       out.write("        <link rel=\"stylesheet\" href=\"boot.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"newcss.css\">\n");
       out.write("        <script lang=\"javascript\" src=\"support.js\" ></script>\n");
@@ -61,7 +61,7 @@ public final class CMS_005f2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       <div class=\"back_image\">\n");
       out.write("            <div class=\"box\" align=\"center\">\n");
       out.write("                <div class=\"headder\" align=\"center\">\n");
-      out.write("                    <h2 class=\"headder_color\">Self-Assessment</h2>\n");
+      out.write("                    <h2 class=\"headder_color\">Set Rubrics</h2>\n");
       out.write("                </div>\n");
       out.write("                <div align=\"center\"  >\n");
       out.write("                    <form name=\"cms2_form\" method=\"POST\">\n");
@@ -86,7 +86,7 @@ public final class CMS_005f2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <br>\n");
       out.write("                            <textarea autocomplete=\"off\" placeholder=\"Criteria Prompt\" class=\"form-control\" name=\"set_prompt\" rows=\"2\" cols=\"20\" ></textarea>\n");
       out.write("                            <br>\n");
-      out.write("                            <div style=\"padding: 15px ; align-content: center ; border: solid ; border-color: black ;\">\n");
+      out.write("                            <div style=\"padding: 5px ; align-content: center ; border: solid ; border-color: #899daf ; border-width:thin; \">\n");
       out.write("                                <h6>Feedback</h6>\n");
       out.write("                                <input type=\"radio\" name=\"feed_radio\" value=\"feedback\" />None<input type=\"radio\" name=\"feed_radio\" value=\"feedback\" />Optional \n");
       out.write("                                    <input type=\"radio\" name=\"feed_radio\" value=\"feedback\" />Required \n");
@@ -129,6 +129,7 @@ public final class CMS_005f2_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </form>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
+      out.write("       </div>\n");
       out.write("       </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
