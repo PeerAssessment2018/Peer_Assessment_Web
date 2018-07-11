@@ -22,9 +22,12 @@
             <div class="box" align="center">
                 <div class="headder" align="center">
                     <%
+                        String course_id="Item 1",question_id="15";
+                        session.setAttribute("state_learn", null);
                         DataBase_Handler dbh=new DataBase_Handler();
+                        dbh.get_no_assessors(course_id, question_id);
                         //int user_id=Integer.valueOf((String)session.getAttribute("id"));
-                        int number_peer=5;//dbh.assessments_done(user_id,"Item 1","15")+1;
+                        int number_peer=dbh.get_no_assessors(course_id, question_id);;//dbh.assessments_done(user_id,"Item 1","15")+1;
                         %>
                         <h2 class="headder_color">Assess Your Peer : <%= number_peer %></h2>
                 </div>
@@ -35,15 +38,12 @@
                                  <p><%= dbh.course_question("Item 1") %></p>
                              </div>
                             <br>
-                            <div class="input-width">
-                                 <textarea autocomplete="off" placeholder="Response" class="form-control" name="prompt" rows="4" cols="20" ></textarea>
+                            <div class="input-width form-control prompt_box">
+                                <p><%= dbh.check_PA(user_id, course_id, question_id) %></p>
                              </div>
                             <br>
                             <div class="criterias">
-                                <%
-                                    
-                                    String course_id="Item 1",question_id="15";
-                                    
+                                <%                                    
                                     ArrayList ar=dbh.criteria(course_id, question_id);
                                     int n=ar.size(),i=0;
                                     System.out.println(ar);

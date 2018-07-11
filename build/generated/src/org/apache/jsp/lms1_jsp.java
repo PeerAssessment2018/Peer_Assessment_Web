@@ -65,15 +65,18 @@ public final class lms1_jsp extends org.apache.jasper.runtime.HttpJspBase
  session.setAttribute("state_s", "1");
                             //System.out.println(request.getAttribute("response"));
       out.write("\n");
-      out.write("                                window.location=\"lms1_save.jsp\";\n");
+      out.write("                                window.location=\"lms1_save_1.jsp\";\n");
       out.write("            }\n");
+      out.write("            /*function save_data()\n");
+      out.write("            {\n");
+      out.write("            }*/\n");
       out.write("           function test_session2()\n");
       out.write("            {   \n");
       out.write("                        alert(\"hello! 22\");\n");
       out.write("                        ");
- //session.setAttribute("state_s", "2"); 
+ session.setAttribute("state_s", "2"); 
       out.write("\n");
-      out.write("                                window.location=\"lms1_save.jsp\";\n");
+      out.write("                                window.location=\"lms1_save_2.jsp\";\n");
       out.write("            }\n");
       out.write("        </script>\n");
       out.write("    </head>\n");
@@ -84,7 +87,7 @@ public final class lms1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <h2 class=\"headder_color\">Submit Your Response</h2>\n");
       out.write("                </div>\n");
       out.write("                <div align=\"center\"  >\n");
-      out.write("                     <form name=\"lms1_form\" method=\"POST\" action=\"lms1_save.jsp\"> \n");
+      out.write("                     <form name=\"lms1_form\" method=\"POST\" action=\"\"> \n");
       out.write("                         ");
 
                              String s1 = (String)session.getAttribute("username"); 
@@ -111,9 +114,9 @@ public final class lms1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <br>\n");
       out.write("                            <div style=\"padding: 5px\">\n");
       out.write("                                </div>\n");
-      out.write("                            <button class=\"form-control buttonstyle_smaller\" type=\"submit\" value=\"Save\" name=\"submit\" onclick=\"test_session()\"/>\n");
+      out.write("                        <button class=\"form-control buttonstyle_smaller\" type=\"button\" value=\"Save\" name=\"submit\" onclick=\"test_session()\">Save</button>\n");
       out.write("                            <br>\n");
-      out.write("                            <button class=\"form-control buttonstyle_smaller\" type=\"submit\" value=\"Submit\" name=\"submit\" onclick=\"test_session2()\"/>\n");
+      out.write("                            <button class=\"form-control buttonstyle_smaller\" type=\"button\" value=\"Submit\" name=\"submit2\" onclick=\"test_session2()\">Submit</button>\n");
       out.write("                </form>\n");
       out.write("                </div>\n");
       out.write("               \n");

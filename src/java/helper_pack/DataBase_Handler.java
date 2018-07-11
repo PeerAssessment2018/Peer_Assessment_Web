@@ -1483,6 +1483,51 @@ public int insert_courseware_studentmodule(int user_id,String ans,String questio
                             System.out.println("ERROR: Could not delete record in option_details" + e);
                     }
     }
+    
+    public ArrayList<String> get_sample_answers(String course_id, String question_id) {
+       ArrayList<String> s = new ArrayList<String>();
+        try{
+            String sql = "SELECT DISTINCT sample_answer FROM sample_answer_details WHERE course_id = '" + course_id +"' AND question_id = '"+question_id +"'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next())
+            s.add(rs.getString("sample_answer"));
+        }
+        catch(SQLException e)
+                {
+                  System.out.println(e); 
+                }
+        return s;
+    }
+   public ArrayList<String> get_sample_criteria(String course_id, String question_id, String answer) {
+        ArrayList<String> s = new ArrayList<String>();
+        try{
+            String sql = "SELECT DISTINCT criteria FROM sample_answer_details WHERE course_id = '" + course_id +"' AND question_id = '"+question_id +"' AND sample_answer = '"+answer +"'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next())
+            s.add(rs.getString("criteria"));
+        }
+        catch(SQLException e)
+                {
+                  System.out.println(e); 
+                }
+        return s;
+    }
+   public ArrayList<String> get_correct_option(String course_id, String question_id,String answer) {
+        ArrayList<String> s = new ArrayList<String>();
+        try{
+            String sql = "SELECT DISTINCT correct_option FROM sample_answer_details WHERE course_id = '" + course_id +"' AND question_id = '"+question_id +"' AND sample_answer = '"+answer +"'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next())
+            s.add(rs.getString("correct_option"));
+        }catch(SQLException e)
+                {
+                  System.out.println(e); 
+                }
+        return s;
+    }
     public static void  main(String args[])
     {
         
